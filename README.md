@@ -2,7 +2,13 @@
 
 Monitoring for Brutalismbot App.
 
-## See Also
+## Development
+
+1. Ensure your AWS keys are properly exported into your environment
+2. Run `make` to build a Docker image that contains a planfile for terraform
+3. Run `make apply` to apply the configuration to AWS
+
+### See Also
 
 - [Brutalismbot API](https://github.com/brutalismbot/api)
 - [Brutalismbot App](https://github.com/brutalismbot/brutalismbot)
