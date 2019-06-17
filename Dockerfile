@@ -1,7 +1,7 @@
 ARG RUNTIME=ruby2.5
 
 FROM lambci/lambda:build-${RUNTIME}
-COPY --from=hashicorp/terraform:0.12.1 /bin/terraform /bin/
+COPY --from=hashicorp/terraform:0.12.2 /bin/terraform /bin/
 COPY . .
 ARG AWS_ACCESS_KEY_ID
 ARG AWS_DEFAULT_REGION=us-east-1
