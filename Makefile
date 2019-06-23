@@ -1,32 +1,39 @@
-name  := mail
-build := $(shell git describe --tags --always)
-digest = $(shell cat .docker/$(build))
+name   := monitoring
+stages := build test plan
+build  := $(shell git describe --tags --always)
+shells := $(foreach stage,$(stages),shell@$(stage))
+digest  = $(shell cat .docker/$(build)$(1))
 
-.PHONY: all apply clean shell
+.PHONY: all apply clean $(stages) $(shells)
 
-all: .docker/$(build)
+all: build
 
 .docker:
 	mkdir -p $@
 
-.docker/%: | .docker
+.docker/$(build)@test: .docker/$(build)@build
+.docker/$(build)@plan: .docker/$(build)@test
+.docker/$(build)@%: | .docker
 	docker build \
 	--build-arg AWS_ACCESS_KEY_ID \
 	--build-arg AWS_DEFAULT_REGION \
 	--build-arg AWS_SECRET_ACCESS_KEY \
 	--iidfile $@ \
-	--tag brutalismbot/$(name):$* .
+	--tag brutalismbot/$(name):$(build)-$* \
+	--target $* .
 
-apply: .docker/$(build)
+apply: plan
 	docker run --rm \
 	--env AWS_ACCESS_KEY_ID \
 	--env AWS_DEFAULT_REGION \
 	--env AWS_SECRET_ACCESS_KEY \
-	$(digest)
+	$(call digest,@$<)
 
 clean:
 	-docker image rm -f $(shell awk {print} .docker/*)
 	-rm -rf .docker
 
-shell: .docker/$(build) .env
-	docker run --rm -it --env-file .env $(digest) /bin/bash
+$(stages): %: .docker/$(build)@%
+
+$(shells): shell@%: % .env
+	docker run --rm -it --env-file .env $(call digest,@$*) /bin/bash
