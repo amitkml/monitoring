@@ -7,5 +7,5 @@ deploy:
 - provider: script
   script: make apply
   on:
-    repo: brutalismbot/brutalismbot
+    repo: brutalismbot/monitoring
     tags: true
