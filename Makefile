@@ -2,7 +2,7 @@ name   := monitoring
 stages := build test plan
 build  := $(shell git describe --tags --always)
 shells := $(foreach stage,$(stages),shell@$(stage))
-digest  = $(shell cat .docker/$(build)$(1))
+digest  = $(shell cat .docker/$(build)@$(1))
 
 .PHONY: all apply clean $(stages) $(shells)
 
@@ -27,7 +27,7 @@ apply: plan
 	--env AWS_ACCESS_KEY_ID \
 	--env AWS_DEFAULT_REGION \
 	--env AWS_SECRET_ACCESS_KEY \
-	$(call digest,@$<)
+	$(call digest,$<)
 
 clean:
 	-docker image rm -f $(shell awk {print} .docker/*)
@@ -36,4 +36,4 @@ clean:
 $(stages): %: .docker/$(build)@%
 
 $(shells): shell@%: % .env
-	docker run --rm -it --env-file .env $(call digest,@$*) /bin/bash
+	docker run --rm -it --env-file .env $(call digest,$*) /bin/bash
