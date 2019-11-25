@@ -5,11 +5,11 @@ terraform {
     region = "us-east-1"
   }
 
-  required_version = ">= 0.12.0"
+  required_version = "~> 0.12"
 }
 
 provider aws {
-  version = "~> 2.7"
+  version = "~> 2.11"
 }
 
 resource aws_cloudwatch_dashboard dash {
