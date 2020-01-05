@@ -13,5 +13,5 @@ rum :"brutalismbot/mail" do
   desc "Apply infrastructure"
   run :apply => :plan
 
-  default [:plan]
+  default :plan
 end
