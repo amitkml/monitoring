@@ -3,7 +3,7 @@ GEM
   specs:
     dotenv (2.7.5)
     rake (13.0.1)
-    rumrunner (0.4.3)
+    rumrunner (0.5.0)
       rake (~> 13.0)
 
 PLATFORMS
@@ -11,7 +11,7 @@ PLATFORMS
 
 DEPENDENCIES
   dotenv (~> 2.7)
-  rumrunner (~> 0.4)
+  rumrunner (~> 0.5)
 
 BUNDLED WITH
-   2.0.2
+   2.1.2
