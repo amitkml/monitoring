@@ -1,5 +1,7 @@
 <img alt="brutalismbot" src="https://brutalismbot.com/banner.png"/>
 
+[![plan](https://github.com/brutalismbot/monitoring/workflows/plan/badge.svg)](https://github.com/brutalismbot/monitoring/actions)
+
 Monitoring for Brutalismbot App.
 
 ## Development
