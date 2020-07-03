@@ -12,51 +12,35 @@
             "AWS/Lambda",
             "Errors",
             "FunctionName",
-            "brutalismbot-slack-api",
-            {
-              "period": 86400,
-              "stat": "Sum"
-            }
+            "brutalismbot-mail"
           ],
           [
             "...",
-            "brutalismbot-pull",
-            {
-              "period": 86400,
-              "stat": "Sum"
-            }
+            "brutalismbot-reddit-pull"
           ],
           [
             "...",
-            "brutalismbot-slack-install",
-            {
-              "period": 86400,
-              "stat": "Sum"
-            }
+            "brutalismbot-slack-api"
           ],
           [
             "...",
-            "brutalismbot-mail",
-            {
-              "period": 86400,
-              "stat": "Sum"
-            }
+            "brutalismbot-slack-install"
           ],
           [
             "...",
-            "brutalismbot-push",
-            {
-              "period": 86400,
-              "stat": "Sum"
-            }
+            "brutalismbot-slack-list"
           ],
           [
             "...",
-            "brutalismbot-slack-uninstall",
-            {
-              "period": 86400,
-              "stat": "Sum"
-            }
+            "brutalismbot-slack-push"
+          ],
+          [
+            "...",
+            "brutalismbot-slack-uninstall"
+          ],
+          [
+            "...",
+            "brutalismbot-twitter-push"
           ]
         ],
         "view": "timeSeries",
@@ -78,7 +62,8 @@
           }
         },
         "title": "Brutalismbot Errors",
-        "period": 300
+        "period": 86400,
+        "stat": "Sum"
       }
     },
     {
@@ -93,45 +78,41 @@
             "AWS/Lambda",
             "Duration",
             "FunctionName",
-            "brutalismbot-slack-api",
-            {
-              "period": 21600
-            }
-          ],
-          [
-            "...",
-            "brutalismbot-pull",
-            {
-              "period": 21600
-            }
-          ],
-          [
-            "...",
-            "brutalismbot-slack-install",
-            {
-              "period": 21600
-            }
-          ],
-          [
-            "...",
             "brutalismbot-mail",
             {
-              "period": 21600
+              "yAxis": "left"
             }
           ],
           [
             "...",
-            "brutalismbot-push",
+            "brutalismbot-reddit-pull",
             {
-              "period": 21600
+              "yAxis": "left"
             }
           ],
           [
             "...",
-            "brutalismbot-slack-uninstall",
-            {
-              "period": 21600
-            }
+            "brutalismbot-slack-api"
+          ],
+          [
+            "...",
+            "brutalismbot-slack-install"
+          ],
+          [
+            "...",
+            "brutalismbot-slack-list"
+          ],
+          [
+            "...",
+            "brutalismbot-slack-push"
+          ],
+          [
+            "...",
+            "brutalismbot-slack-uninstall"
+          ],
+          [
+            "...",
+            "brutalismbot-twitter-push"
           ]
         ],
         "view": "timeSeries",
@@ -144,10 +125,11 @@
           }
         },
         "title": "Brutalismbot Lambda Average Duration",
-        "period": 300,
+        "period": 21600,
         "legend": {
           "position": "right"
-        }
+        },
+        "stat": "Average"
       }
     }
   ]
