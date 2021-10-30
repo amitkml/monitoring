@@ -1,47 +1,21 @@
 {
   "widgets": [
     {
-      "type": "metric",
-      "x": 0,
-      "y": 0,
-      "width": 24,
       "height": 6,
+      "width": 24,
+      "y": 6,
+      "x": 0,
+      "type": "metric",
       "properties": {
         "metrics": [
-          [
-            "AWS/Lambda",
-            "Errors",
-            "FunctionName",
-            "brutalismbot-mail"
-          ],
-          [
-            "...",
-            "brutalismbot-reddit-pull"
-          ],
-          [
-            "...",
-            "brutalismbot-slack-api"
-          ],
-          [
-            "...",
-            "brutalismbot-slack-install"
-          ],
-          [
-            "...",
-            "brutalismbot-slack-list"
-          ],
-          [
-            "...",
-            "brutalismbot-slack-push"
-          ],
-          [
-            "...",
-            "brutalismbot-slack-uninstall"
-          ],
-          [
-            "...",
-            "brutalismbot-twitter-push"
-          ]
+          ["AWS/Lambda", "Errors", "FunctionName", "brutalismbot-mail"],
+          ["...", "brutalismbot-reddit-pull"],
+          ["...", "brutalismbot-slack-api"],
+          ["...", "brutalismbot-slack-install"],
+          ["...", "brutalismbot-slack-list"],
+          ["...", "brutalismbot-slack-push"],
+          ["...", "brutalismbot-slack-uninstall"],
+          ["...", "brutalismbot-twitter-push"]
         ],
         "view": "timeSeries",
         "stacked": false,
@@ -67,11 +41,11 @@
       }
     },
     {
-      "type": "metric",
-      "x": 0,
-      "y": 6,
-      "width": 24,
       "height": 6,
+      "width": 24,
+      "y": 12,
+      "x": 0,
+      "type": "metric",
       "properties": {
         "metrics": [
           [
@@ -90,30 +64,12 @@
               "yAxis": "left"
             }
           ],
-          [
-            "...",
-            "brutalismbot-slack-api"
-          ],
-          [
-            "...",
-            "brutalismbot-slack-install"
-          ],
-          [
-            "...",
-            "brutalismbot-slack-list"
-          ],
-          [
-            "...",
-            "brutalismbot-slack-push"
-          ],
-          [
-            "...",
-            "brutalismbot-slack-uninstall"
-          ],
-          [
-            "...",
-            "brutalismbot-twitter-push"
-          ]
+          ["...", "brutalismbot-slack-api"],
+          ["...", "brutalismbot-slack-install"],
+          ["...", "brutalismbot-slack-list"],
+          ["...", "brutalismbot-slack-push"],
+          ["...", "brutalismbot-slack-uninstall"],
+          ["...", "brutalismbot-twitter-push"]
         ],
         "view": "timeSeries",
         "stacked": false,
@@ -130,6 +86,29 @@
           "position": "right"
         },
         "stat": "Average"
+      }
+    },
+    {
+      "height": 6,
+      "width": 24,
+      "y": 0,
+      "x": 0,
+      "type": "metric",
+      "properties": {
+        "metrics": [["Brutalismbot", "QueueSize", "QueueName", "/r/brutalism"]],
+        "view": "timeSeries",
+        "stacked": false,
+        "region": "us-east-1",
+        "stat": "Maximum",
+        "period": 3600,
+        "title": "QueueSize",
+        "yAxis": {
+          "left": {
+            "min": 0,
+            "showUnits": false
+          }
+        },
+        "liveData": true
       }
     }
   ]
