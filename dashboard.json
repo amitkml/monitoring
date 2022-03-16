@@ -3,23 +3,46 @@
     {
       "height": 6,
       "width": 24,
+      "y": 0,
+      "x": 0,
+      "type": "metric",
+      "properties": {
+        "metrics": [["Brutalismbot", "QueueSize", "QueueName", "/r/brutalism"]],
+        "view": "timeSeries",
+        "stacked": false,
+        "region": "us-west-2",
+        "stat": "Maximum",
+        "period": 3600,
+        "title": "QueueSize",
+        "yAxis": {
+          "left": {
+            "min": 0,
+            "showUnits": false
+          }
+        },
+        "liveData": true
+      }
+    },
+    {
+      "height": 6,
+      "width": 24,
       "y": 6,
       "x": 0,
       "type": "metric",
       "properties": {
         "metrics": [
-          ["AWS/Lambda", "Errors", "FunctionName", "brutalismbot-mail"],
-          ["...", "brutalismbot-reddit-pull"],
+          ["AWS/Lambda", "Errors", "FunctionName", "brutalismbot-http"],
+          ["...", "brutalismbot-mail"],
+          ["...", "brutalismbot-reddit-dequeue"],
           ["...", "brutalismbot-slack-api"],
-          ["...", "brutalismbot-slack-install"],
-          ["...", "brutalismbot-slack-list"],
-          ["...", "brutalismbot-slack-push"],
-          ["...", "brutalismbot-slack-uninstall"],
-          ["...", "brutalismbot-twitter-push"]
+          ["...", "brutalismbot-slack-api-beta"],
+          ["...", "brutalismbot-slack-transform"],
+          ["...", "brutalismbot-twitter-post"],
+          ["...", "brutalismbot-twitter-transform"]
         ],
         "view": "timeSeries",
         "stacked": false,
-        "region": "us-east-1",
+        "region": "us-west-2",
         "setPeriodToTimeRange": false,
         "legend": {
           "position": "right"
@@ -48,32 +71,18 @@
       "type": "metric",
       "properties": {
         "metrics": [
-          [
-            "AWS/Lambda",
-            "Duration",
-            "FunctionName",
-            "brutalismbot-mail",
-            {
-              "yAxis": "left"
-            }
-          ],
-          [
-            "...",
-            "brutalismbot-reddit-pull",
-            {
-              "yAxis": "left"
-            }
-          ],
+          ["AWS/Lambda", "Duration", "FunctionName", "brutalismbot-http"],
+          ["...", "brutalismbot-mail"],
+          ["...", "brutalismbot-reddit-dequeue"],
           ["...", "brutalismbot-slack-api"],
-          ["...", "brutalismbot-slack-install"],
-          ["...", "brutalismbot-slack-list"],
-          ["...", "brutalismbot-slack-push"],
-          ["...", "brutalismbot-slack-uninstall"],
-          ["...", "brutalismbot-twitter-push"]
+          ["...", "brutalismbot-slack-api-beta"],
+          ["...", "brutalismbot-slack-transform"],
+          ["...", "brutalismbot-twitter-post"],
+          ["...", "brutalismbot-twitter-transform"]
         ],
         "view": "timeSeries",
         "stacked": false,
-        "region": "us-east-1",
+        "region": "us-west-2",
         "liveData": true,
         "yAxis": {
           "left": {
@@ -86,29 +95,6 @@
           "position": "right"
         },
         "stat": "Average"
-      }
-    },
-    {
-      "height": 6,
-      "width": 24,
-      "y": 0,
-      "x": 0,
-      "type": "metric",
-      "properties": {
-        "metrics": [["Brutalismbot", "QueueSize", "QueueName", "/r/brutalism"]],
-        "view": "timeSeries",
-        "stacked": false,
-        "region": "us-east-1",
-        "stat": "Maximum",
-        "period": 3600,
-        "title": "QueueSize",
-        "yAxis": {
-          "left": {
-            "min": 0,
-            "showUnits": false
-          }
-        },
-        "liveData": true
       }
     }
   ]
