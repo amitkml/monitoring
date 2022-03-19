@@ -1,9 +1,5 @@
-build:
-	cd functions/mail && bundle
+init:
 	terraform init
-
-clean:
-	rm -rf .terraform*
 
 plan:
 	terraform plan
@@ -11,4 +7,7 @@ plan:
 apply:
 	terraform apply
 
-.PHONY: build clean plan apply
+clean:
+	rm -rf .terraform*
+
+.PHONY: init plan apply clean
